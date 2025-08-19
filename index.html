@@ -9,6 +9,46 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+    /* LOGO容器样式 - 保持原有的位置和布局特性 */
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 8px; /* 图片和文字之间的间距 */
+      height: 100%; /* 继承父容器高度 */
+    }
+    
+    /* 图片LOGO样式 */
+    .logo-image {
+      height: 40px; /* 根据需要调整高度 */
+      width: auto; /* 保持宽高比 */
+      object-fit: contain; /* 确保图片完整显示 */
+      transition: transform 0.3s ease; /* 悬停效果 */
+    }
+    
+    /* 悬停效果（可选） */
+    .logo-image:hover {
+      transform: scale(1.05);
+    }
+    
+    /* 文字标识样式（如果使用） */
+    .logo-text {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #1a1a1a; /* 根据你的配色方案调整 */
+    }
+    
+    /* 响应式调整 - 在小屏幕上缩小LOGO */
+    @media (max-width: 768px) {
+      .logo-image {
+        height: 32px;
+      }
+      
+      .logo-text {
+        font-size: 1rem;
+      }
+    }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -17,6 +57,15 @@
             <div class="nav-logo">
                 <span class="logo-icon">V</span>
                 <span class="logo-text">Vcuni Systems</span>
+            </div>
+            <div class="logo-container">
+              <!-- 图片LOGO -->
+              <img src="your-logo-image.png" 
+                   alt="Vcuni Systems 标志" 
+                   class="logo-image"
+                   onerror="this.src='fallback-logo.png'; this.alt='Vcuni Systems'">          
+              <!-- 可选：如果需要保留文字标识作为补充 -->
+              <span class="logo-text">Vcuni Systems</span>
             </div>
             <ul class="nav-menu">
                 <li class="nav-item">
